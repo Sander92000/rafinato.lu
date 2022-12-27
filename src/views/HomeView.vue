@@ -31,7 +31,6 @@
         </ul>
         <!-- Slider -->
         <SliderComponentVue />
-        <img src="../assets/img/horse-jump.jpg" />
         <hr />
       </div>
     </div>

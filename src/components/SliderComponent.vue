@@ -1,40 +1,26 @@
 <template>
-  <div class="slider">
-    <img v-bind:src="selectedImage" />
-    <button v-on:click="prevSlide">prev</button>
-    <button v-on:click="nextSlide">next</button>
+  <div id="homeCarousel" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../assets/img/horse-race.jpg" class="d-block w-100" alt="" />
+      </div>
+      <div class="carousel-item">
+        <img src="../assets/img/horse-dressure.jpg" class="d-block w-100" alt="" />
+      </div>
+      <div class="carousel-item">
+        <img src="../assets/img/horse-jump.jpg" class="d-block w-100" alt="" />
+      </div>
+      <div class="carousel-item">
+        <img src="../assets/img/horse-cowboy.jpg" class="d-block w-100" alt="" />
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      index: 0,
-      imageList: [
-        "@/assets/img/horse-race.jpg",
-        "@/assets/img/horse-dressure.jpg",
-        "@/assets/img/horse-jump.jpg",
-        "@/assets/img/horse-cowboy.jpg",
-      ],
-      selectedImage: "@/assets/img/horse-race.jpg",
-    };
-  },
-  methods: {
-    prevSlide() {
-      this.index--;
-      console.log(this.index);
-      this.setSelectedImage();
-    },
-    nextSlide() {
-      this.index++;
-      console.log(this.index);
-      this.setSelectedImage();
-    },
-    setSelectedImage() {
-      this.selectedImage = this.imageList[this.index];
-      console.log(this.selectedImage);
-    },
-  },
-};
-</script>

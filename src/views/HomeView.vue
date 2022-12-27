@@ -85,6 +85,7 @@
 .col {
   width: 50%;
   float: left;
+  margin-top: 15px;
 }
 
 img {
@@ -121,6 +122,10 @@ img {
 
   .intro {
     height: 40vh;
+  }
+
+  .col {
+    width: 100%;
   }
 }
 </style>

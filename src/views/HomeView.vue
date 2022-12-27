@@ -42,7 +42,7 @@
           <p>40D Rue de Clairefontaine</p>
           <p>L-8460 Eischen</p>
           <p>Luxemburg</p>
-          <p>Linda Groot – Technicienne Dentaire Equin diplomée de l’Ecole Européenne de Dentisterie Equine.</p>
+          <p id="diploma">Linda Groot – Technicienne Dentaire Equin diplomée de l’Ecole Européenne de Dentisterie Equine.</p>
           <a href="tel:00352621966271">00352 621 966 271</a>
           <br />
           <a href="mailto:linda.groot@rafinato.lu">linda.groot@rafinato.lu</a>
@@ -109,5 +109,9 @@ img {
 #smile img {
   margin: 32px auto;
   width: 40%;
+}
+
+#diploma {
+  font-weight: 700;
 }
 </style>

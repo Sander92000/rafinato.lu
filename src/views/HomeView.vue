@@ -113,4 +113,14 @@ img {
 #diploma {
   font-weight: 700;
 }
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 80%;
+  }
+
+  .intro {
+    height: 40vh;
+  }
+}
 </style>

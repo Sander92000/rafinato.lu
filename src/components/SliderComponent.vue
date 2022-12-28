@@ -24,3 +24,9 @@
     </button>
   </div>
 </template>
+
+<style scoped>
+#homeCarousel {
+  width: 100%;
+}
+</style>

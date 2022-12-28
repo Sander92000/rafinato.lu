@@ -62,6 +62,7 @@
   width: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
+  margin-left: 0px !important;
 }
 
 .intro {

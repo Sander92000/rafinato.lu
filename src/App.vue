@@ -21,7 +21,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <p>Retrouvez nous sur:</p>
           <ul>
             <li v-for="link in socialLinks" v-bind:key="link.id">
-              <a :href="link.link" :target="link.target"><img :src="link.logo" /></a>
+              <a :href="link.link" :target="link.target" :alt="link.alt"><img :src="link.logo" /></a>
             </li>
           </ul>
       </div>
@@ -106,6 +106,7 @@ export default {
           link: "https://www.facebook.com/linda.groot.944",
           target: "_blank",
           logo: "./src/assets/img/f_logo_58.png",
+          alt: "Logo facebook",
         },
       ],
     };

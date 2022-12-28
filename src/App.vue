@@ -13,12 +13,23 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 
   <footer>
-    <p>Rafinato Equine Dentistery</p>
+    <div class="container">
+      <div class="row signature">
+        <p>Rafinato Equine Dentistery</p>
+      </div>
+      <div class="row social">
+        <p>Retrouvez nous sur:</p>
+          <ul>
+            <li v-for="link in socialLinks" v-bind:key="link.id">
+              <a :href="link.link" :target="link.target"><img :src="link.logo" /></a>
+            </li>
+          </ul>
+      </div>
+    </div>
   </footer>
 </template>
 
 <style scoped>
-
 header{
   width: 100%;
   margin-top: 32px;
@@ -44,9 +55,60 @@ h1 {
 }
 
 footer {
-  display: flex;
+  width: 100%;
+}
+
+.signature {
+  padding: 15px;
   align-items: center;
-  justify-content: center;
+  text-align: center;
   font-weight: bold;
 }
+
+.social p {
+  font-size: 16px;
+}
+
+.social ul{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.social ul li {
+  display: inline;
+  list-style: none;
+  margin: 10px;
+}
+
+.social ul li img {
+  width: 32px;
+}
+
+
+#fb-logo {
+  width: 58px;
+}
+
+#fb-logo img{
+  width: 32px;
+}
 </style>
+
+<script lang="ts">
+export default {
+  data: () => {
+    return {
+      socialLinks: [
+        {
+          id: 1,
+          link: "https://www.facebook.com/linda.groot.944",
+          target: "_blank",
+          logo: "./src/assets/img/f_logo_58.png",
+        },
+      ],
+    };
+  },
+}
+</script>

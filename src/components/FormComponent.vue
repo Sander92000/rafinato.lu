@@ -12,7 +12,9 @@
     <input type="text" id="email-field" v-model="email" />
   </div>
   <div class="form-group">
-    <textarea v-model="message"></textarea>
+    <label for="message-field">Votre message :</label>
+    <br />
+    <textarea id="message-field" v-model="message"></textarea>
   </div>
   <button>Contact Us</button>
 </template>

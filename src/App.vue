@@ -21,7 +21,9 @@ import { RouterLink, RouterView } from 'vue-router'
         <p>Retrouvez nous sur:</p>
           <ul>
             <li v-for="link in socialLinks" v-bind:key="link.id">
-              <a :href="link.link" :target="link.target" :alt="link.alt"><img :src="link.logo" /></a>
+              <a :href="link.link" :target="link.target">
+                <img :src="link.logo" :alt="link.alt" />
+              </a>
             </li>
           </ul>
       </div>

@@ -51,7 +51,7 @@
         </div>
       </div>
       <div id="smile">
-        <img src="../assets/img/horse-smile.jpg" />
+        <img src="../assets/img/horse-smile.jpg" alt="A horse showing his teeth"/>
       </div>
     </div>
   </main>

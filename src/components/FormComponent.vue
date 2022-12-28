@@ -2,14 +2,14 @@
   <h3>{{ title }}</h3>
   <!-- Form -->
   <div class="form-group">
-    <label>Name <span class="required">(required)</span></label>
+    <label for="name-field">Name <span class="required">(required)</span></label>
     <br />
-    <input type="text" v-model="name" />
+    <input type="text" id="name-field" v-model="name" />
   </div>
   <div class="form-group">
-    <label>Email <span class="required">(required)</span></label>
+    <label for="email-field">Email <span class="required">(required)</span></label>
     <br />
-    <input type="text" v-model="email" />
+    <input type="text" id="email-field" v-model="email" />
   </div>
   <div class="form-group">
     <textarea v-model="message"></textarea>

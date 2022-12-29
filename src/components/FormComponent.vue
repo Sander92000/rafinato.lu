@@ -16,7 +16,7 @@
     <br />
     <textarea id="message-field" v-model="message"></textarea>
   </div>
-  <button v-on:click="sendMail">Contact Us</button>
+  <button>Contact Us</button>
 </template>
 
 <style scoped>

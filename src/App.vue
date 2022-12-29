@@ -107,7 +107,7 @@ export default {
           id: 1,
           link: "https://www.facebook.com/linda.groot.944",
           target: "_blank",
-          logo: "./src/assets/img/f_logo_58.png",
+          logo: "/f_logo_58.png",
           alt: "Logo facebook",
         },
       ],

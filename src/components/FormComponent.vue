@@ -1,64 +1,40 @@
 <template>
   <h3>{{ title }}</h3>
-  <!-- Form -->
-  <div class="form-group">
-    <label for="name-field">Name <span class="required">(required)</span></label>
-    <br />
-    <input type="text" id="name-field" v-model="name" />
-  </div>
-  <div class="form-group">
-    <label for="email-field">Email <span class="required">(required)</span></label>
-    <br />
-    <input type="text" id="email-field" v-model="email" />
-  </div>
-  <div class="form-group">
-    <label for="message-field">Votre message :</label>
-    <br />
-    <textarea id="message-field" v-model="message"></textarea>
-  </div>
-  <button v-on:click="sendMail">Contact Us</button>
+  <form ref="form" @submit.prevent="sendEmail">
+    <label>Votre nom: *</label>
+    <input type="text" id="user-name" name="user_name" v-model="name" />
+    <label>Votre adresse email: *</label>
+    <input type="email" id="user-email" name="user_email" v-model="email" />
+    <label>Votre message:</label>
+    <textarea name="message" v-model="message"></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
 </template>
 
 <style scoped>
-.form-group {
+input {
   width: 100%;
-  margin: 10px 0px;
 }
 
-.form-group input {
+textarea {
   width: 100%;
-  padding: 10px;
-  font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  min-height: 200px;
-  font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-.required {
-  font-size: 17px;
-  font-weight: 400;
-  color: rgb(48, 48, 48);
-  opacity: 0.45;
 }
 
 button {
-  color: white;
-  background-color: rgb(18, 121, 190);
-  font-size: 20px;
-  font-weight: 700;
-  font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  color: #fff;
   border: none;
   border-radius: 5px;
+  background-color: #1279be;
+  font-size: 20px;
+  font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   padding: 16px 24px;
-  cursor: pointer;
 }
 </style>
 
 <script lang="ts">
+import emailjs from '@emailjs/browser';
+
 export default {
   props: ["title"],
   data: function() {
@@ -66,17 +42,25 @@ export default {
       name: "",
       email: "",
       message: "",
+      emailJS: {
+        serviceId: import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+        templateId: import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+        publicKey: import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY,
+      }
     };
   },
   methods: {
-    sendMail: function() {
-      if (this.name == "") {
-        alert('Hello');
-        return true;
-      }
-
-      alert('alert 2');
-    }
+    sendEmail() {
+      emailjs.sendForm(this.emailJS.serviceId, 
+                       this.emailJS.templateId, 
+                       this.$refs.form, 
+                       this.emailJS.publicKey)
+      .then((result) => {
+        console.log('success');
+      }).catch( (error) => {
+        console.log(error);
+      }); 
+    },
   },
 };
 </script>

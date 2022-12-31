@@ -51,6 +51,8 @@ export default {
   },
   methods: {
     sendEmail() {
+      console.log(this.emailJS.serviceId);
+      /*
       emailjs.sendForm(this.emailJS.serviceId, 
                        this.emailJS.templateId, 
                        this.$refs.form, 
@@ -59,7 +61,8 @@ export default {
         console.log('success');
       }).catch( (error) => {
         console.log(error);
-      }); 
+      });
+      */ 
     },
   },
 };

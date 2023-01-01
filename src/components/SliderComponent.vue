@@ -1,4 +1,14 @@
 <template>
+  <q-carsousel
+    animated
+    v-model="slide"
+    navigation
+    padding
+    infinite
+  >
+    <q-carousel-slide :name="1" img-src="../src/assets/img/horse-dressure.jpg" />
+  </q-carsousel>
+  <!-- 
   <div id="homeCarousel" class="carousel slide carousel-fade">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -22,7 +32,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+  </div>-->
 </template>
 
 <style scoped>
@@ -30,3 +40,21 @@
   width: 100%;
 }
 </style>
+
+<script lang="ts">
+import { ref } from 'vue'
+
+export default {
+  setup() {
+    return {
+      slide: ref(1)
+    }
+  },
+  data: function () {
+    return {
+      slide: null,
+    }
+  }
+}
+</script>
+

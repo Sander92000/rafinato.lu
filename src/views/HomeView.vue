@@ -48,7 +48,6 @@
         </div>
         <div class="col">
           <FormComponentVue title="Contact" />
-          <q-btn label="test" />
         </div>
       </div>
       <div id="smile">

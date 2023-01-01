@@ -61,6 +61,7 @@ button {
 </style>
 
 <script lang="ts">
+import { ref } from 'vue'
 import emailjs from '@emailjs/browser';
 
 export default {
@@ -105,10 +106,12 @@ export default {
         emailInput.classList.remove('input-error');
       }
 
-      emailjs.sendForm(this.emailJS.serviceId, 
-                       this.emailJS.templateId, 
-                       this.$refs.form, 
-                       this.emailJS.publicKey)
+      emailjs
+        .sendForm(
+          this.emailJS.serviceId,
+          this.emailJS.templateId,
+          this.$refs.form,
+          this.emailJS.publicKey)
       .then((result) => {
         console.log('SUCCESS!', result.text);
         this.name = "";

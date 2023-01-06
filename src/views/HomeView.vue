@@ -37,14 +37,16 @@
     <div class="row contact">
       <div class="container">
         <div class="col">
-          <h3>Rafinato Equine Dentistery</h3>
-          <p>40D Rue de Clairefontaine</p>
-          <p>L-8460 Eischen</p>
-          <p>Luxemburg</p>
-          <p id="diploma">Linda Groot – Technicienne Dentaire Equin diplomée de l’Ecole Européenne de Dentisterie Equine.</p>
-          <a href="tel:00352621966271">00352 621 966 271</a>
-          <br />
-          <a href="mailto:linda.groot@rafinato.lu">linda.groot@rafinato.lu</a>
+          <address>
+            <h3>Rafinato Equine Dentistery</h3>
+            <p>40D Rue de Clairefontaine</p>
+            <p>L-8460 Eischen</p>
+            <p>Luxemburg</p>
+            <p id="diploma">Linda Groot – Technicienne Dentaire Equin diplomée de l’Ecole Européenne de Dentisterie Equine.</p>
+            <a href="tel:00352621966271">00352 621 966 271</a>
+            <br />
+            <a href="mailto:linda.groot@rafinato.lu">linda.groot@rafinato.lu</a>
+          </address>
         </div>
         <div class="col">
           <FormComponentVue title="Contact" />

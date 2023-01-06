@@ -10,7 +10,9 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
   </header>
 
-  <RouterView />
+  <div class="router-view-container">
+    <RouterView />
+  </div>
 
   <footer>
     <div class="container">
@@ -54,6 +56,10 @@ h1 {
   font-size: 0.75614rem;
   font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
+}
+
+.router-view-container {
+  min-height: 70vh;
 }
 
 footer {

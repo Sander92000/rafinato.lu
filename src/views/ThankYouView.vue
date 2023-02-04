@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="container">
         <p>Merci, de nous avoir contacté nous traitons votre demande dans les plus brefs délais</p>
     </div>
@@ -59,3 +60,7 @@ export default {
     float: left;
 }
 </style>
+=======
+    <p>Hello</p>
+</template>
+>>>>>>> 06b896a36d794ee9181bdeda55cb59976a7ae732
